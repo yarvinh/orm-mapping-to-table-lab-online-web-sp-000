@@ -31,15 +31,16 @@ class Student
         INSERT INTO students (name, grade)
         VALUES (?, ?)
       SQL
-       DB[:conn].execute(sql, self.name, self.grade)
-     @id =  DB[:conn].execute("SELECT id FROM students")[0][0]
+      DB[:conn].execute(sql, self.name, self.grade)
+      @id =  DB[:conn].execute("SELECT id FROM students")[0][0]
    end
+
   def self.create(hash)
     name = []
     grade = []
      hash.each{|k,v| k == :name ? name << v :   grade << v }
-     name.each_with_index{|name,index| p Student.new(name,grade[index]).save}
-
+     name.each_with_index{|name,index| Student.new(name,grade[index]).save}
+     DB[:conn].execute("SELECT * FROM students")
   end
 
 end
