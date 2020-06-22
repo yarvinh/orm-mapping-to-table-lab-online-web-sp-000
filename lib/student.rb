@@ -38,11 +38,12 @@ class Student
   def self.create(hash)
     name = []
     grade = []
+    student = nil
      hash.each{|k,v| k == :name ? name << v :   grade << v }
      name.each_with_index{|name,index| student = Student.new(name,grade[index])
      student.save
    }
-
+student
   end
 
 end
