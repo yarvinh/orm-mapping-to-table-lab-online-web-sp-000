@@ -39,8 +39,10 @@ class Student
     name = []
     grade = []
      hash.each{|k,v| k == :name ? name << v :   grade << v }
-     name.each_with_index{|name,index| Student.new(name,grade[index]).save}
-    p DB[:conn].execute("SELECT * FROM students")[0][0]
+     name.each_with_index{|name,index| student = Student.new(name,grade[index])
+     student.save
+   }
+
   end
 
 end
