@@ -36,9 +36,12 @@ class Student
      @id =  DB[:conn].execute("SELECT id FROM students")[0][0]
    end
   def self.create(hash)
-     hash.each{|k,v|
-     k == :name ? name = v : grade = v
-   p name}
+    name = []
+    grade = []
+     hash.each{|k,v| k == :name ? name << v :   grade << v }
+     p name
+     p grade
+
   end
 
 end
