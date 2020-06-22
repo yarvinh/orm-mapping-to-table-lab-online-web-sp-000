@@ -42,7 +42,6 @@ class Student
        p save
    }
 
-   p save
   end
 
 end
