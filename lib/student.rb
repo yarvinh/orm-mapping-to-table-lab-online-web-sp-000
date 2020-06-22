@@ -39,9 +39,8 @@ class Student
     grade = []
      hash.each{|k,v| k == :name ? name << v :   grade << v }
      name.each_with_index{|name,index|  Student.new(name,grade[index])
-       p save
    }
-
+     self
   end
 
 end
