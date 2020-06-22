@@ -41,7 +41,7 @@ class Student
      name.each_with_index{|name,index|  Student.new(name,grade[index])
    }
 
-   seve
+   p save
   end
 
 end
