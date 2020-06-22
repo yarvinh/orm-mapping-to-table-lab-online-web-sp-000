@@ -2,7 +2,6 @@ class Student
   attr_accessor :name, :grade, :save
   attr_reader :id
     def initialize(name,grade, id = nil)
-
         @id = id
         @name = name
         @grade = grade
@@ -40,7 +39,7 @@ class Student
     grade = []
      hash.each{|k,v| k == :name ? name << v :   grade << v }
      name.each_with_index{|name,index|  Student.new(name,grade[index])
-     save
+     self.save
    }
 
 
